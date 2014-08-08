@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "resume"
-date: 2014-08-06 01:57
+date: 2014-08-06
 comments: false
 sharing: true
 footer: true
@@ -14,16 +14,16 @@ footer: true
     </div>
     
     <div class="properties">
-        Email: <a class="u-email" href="mailto:luckybonza@gmail.com">luckybonza@gmail.com</a><br/>
-        Phone: <span class="p-tel">206-390-4022</span><br/>
-        LinkedIn: <a href="http://www.linkedin.com/pub/craig-beck/9/a48/554">http://www.linkedin.com/pub/craig-beck/9/a48/554</a><br/>
-        GitHub: <a href="https://github.com/craigbeck">https://github.com/craigbeck</a>
+        <a class="u-email" href="mailto:luckybonza@gmail.com">luckybonza@gmail.com</a> <span class="muted">&star;</span> <span class="p-tel">206-390-4022</span><br/>
+        <a href="http://www.linkedin.com/pub/craig-beck/9/a48/554">LinkedIn</a> <span class="muted">&star;</span> <a href="https://github.com/craigbeck">Github</a>
     </div>
 </div>
 
-## Hire me!
 
-### I'm available for full-time or freelance development in Seattle or remotely
+<div class="alert alert-warning">
+    <div class="alert-title">Hire me!</div>
+    <p>I'm available for full-time or freelance development in Seattle WA or remotely</p>
+</div>
 
 The languages I am currently most fluent in are **Python** and **Javascript**,
 although I have done work with Java and C#, and would *love* to
@@ -33,26 +33,25 @@ I am most comfortable with agile development processes and enjoy
 pair-programming and practicing TDD and BDD
 
 
-
 ## Technical Skills
 
 ### Primary Technologies
 
-Javascript, HTML, CSS 3, SASS, LESS, Bootstrap, AngularJS, jQuery, Python, Amazon Web Services (EC2, S3, Route53), OSX, BASH
+Javascript, AngularJS, Python, HTML, CSS 3, Bootstrap, Amazon Web Services (EC2, S3, Route53, SNS, SQS, Cloudwatch), OSX, BASH
 
 ### Seconday Technology
 
-Java, Node, Grunt, d3, Knockout.JS, Elasticsearch, ZeroMQ, Apache Zookeeper, MySQL, Postgres 
+Java, Node, Grunt, SASS, LESS, D3, Elasticsearch, ZeroMQ, Apache Zookeeper, MySQL, Postgres 
 
 ### Past Technologies
 
-C# 2.0-4.0, ASP.NET MVC 3, Linq, NUnit, RabbitMQ, MassTransit, WCF, PowerShell, SQL, XML, XPath, XQuery, NAnt, CruiseControl.NET, Subversion, IIS 6, IIS 7, Microsoft Office,
-Microsoft SQL Server 2005/2008, Sqlite  
+C# 2.0-4.0, ASP.NET MVC 3, Linq, Knockout.JS, NUnit, RabbitMQ, MassTransit, WCF, PowerShell, SQL, XML, XPath, XQuery, NAnt, CruiseControl.NET, Subversion, IIS 6, IIS 7, Microsoft Office, Microsoft SQL Server 2005/2008, Sqlite
 
 
 ## Experience
 
-### [A6 Corporation](http://www.a6corp.com) – Software Developer 11/2012-present
+
+### [A6 Corporation](http://www.a6corp.com) – Software Developer 11/2012-07/2014
 
 Working on next-generation big-data advertising platform as part of a small developer team. Built real-time web applications for business and operations, prototype data visualization apps, and external customer facing applications using Python, AngularJS and related web technologies. Integrated monitoring systems with external APIs using custom Python and Java metrics collection and external APIs (Librato, PagerDuty, AWS SQS, Nsq)
 
@@ -64,7 +63,7 @@ Design and implemented new features for [WordFly](http://www.wordfly.com) SAAS a
 
 Developed JavaScript framework using Knockout.js for Fortune 500 client intranet project. Worked with designers and front-end developers on UX workflow improvements and back-end developers on API changes.
 
-### Shingl Inc. – Front-End Developer 09/2011 – 03/2012
+### [Shingl Inc](http://www.shingl.com) – Front-End Developer 09/2011 – 03/2012
 
 Design and code UI for startup in stealth mode building a consumer oriented service. Extensive JavaScript development using jQuery and Knockout.js to create front end to a RESTful OData Asp.NET MVC web service. Extensive asynchronous programming for both AJAX and UI concerns with multiple dependencies, rules, and validations.
 
