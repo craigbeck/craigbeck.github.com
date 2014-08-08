@@ -2,11 +2,11 @@
 #      Main Configs       #
 # ----------------------- #
 
-url: http://yoursite.com
-title: My Octopress Blog
-subtitle: A blogging framework for hackers.
-author: Your Name
-simple_search: https://www.google.com/search
+url: http://craigbeck.github.io
+title: craigbeck
+subtitle: 
+author: Craig Beck
+simple_search:
 description:
 
 # Default date format is "ordinal" (resulting in "July 22nd 2007")
@@ -41,7 +41,7 @@ rdiscount:
     - smart
 highlighter: pygments # default python pygments have been replaced by pygments.rb
 
-paginate: 10          # Posts per page on the blog index
+paginate: 5           # Posts per page on the blog index
 paginate_path: "posts/:num"  # Directory base for pagination URLs eg. /posts/2/
 recent_posts: 5       # Posts in the sidebar Recent Posts section
 excerpt_link: "Read on &rarr;"  # "Continue reading" link text at the bottom of excerpted articles
@@ -64,7 +64,7 @@ default_asides: [asides/recent_posts.html, asides/github.html, asides/delicious.
 # ----------------------- #
 
 # Github repositories
-github_user:
+github_user: craigbeck
 github_repo_count: 0
 github_show_profile_link: true
 github_skip_forks: true
@@ -95,7 +95,7 @@ disqus_short_name:
 disqus_show_comment_count: false
 
 # Google Analytics
-google_analytics_tracking_id:
+google_analytics_tracking_id: UA-45606470-1
 
 # Facebook Like
 facebook_like: false
