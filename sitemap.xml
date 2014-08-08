@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  
+  <url>
+    <loc>https://craigbeck.io/blog/2014/01/14/angularjs-key-binding-directives/</loc>
+    <lastmod>2014-01-14T10:29:00-08:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://craigbeck.io/blog/2014/01/13/mitmproxy-fiddler-for-osx/</loc>
+    <lastmod>2014-01-13T10:45:00-08:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://craigbeck.io/blog/2013/12/11/ui-dot-router-gotcha/</loc>
+    <lastmod>2013-12-11T10:37:00-08:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://craigbeck.io/blog/2013/11/09/the-open-source-pit-of-success/</loc>
+    <lastmod>2013-11-09T17:44:00-08:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://craigbeck.io/blog/2013/11/08/generator-pymod/</loc>
+    <lastmod>2013-11-08T17:39:00-08:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  
+  <url>
+    <loc>https://craigbeck.io/blog/archives/</loc>
+    <lastmod>2014-08-08T13:57:55-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://craigbeck.io/</loc>
+    <lastmod>2014-08-08T13:57:55-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>https://craigbeck.io/about/</loc>
+    <lastmod>2014-08-08T13:57:55-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://craigbeck.io/resume/</loc>
+    <lastmod>2014-08-08T13:57:55-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  
+</urlset>

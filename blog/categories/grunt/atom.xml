@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Grunt | craigbeck]]></title>
+  <link href="https://craigbeck.io/blog/categories/grunt/atom.xml" rel="self"/>
+  <link href="https://craigbeck.io/"/>
+  <updated>2014-08-08T13:57:55-07:00</updated>
+  <id>https://craigbeck.io/</id>
+  <author>
+    <name><![CDATA[Craig Beck]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[ui.router and 'aProvider' Problems]]></title>
+    <link href="https://craigbeck.io/blog/2013/12/11/ui-dot-router-gotcha/"/>
+    <updated>2013-12-11T10:37:00-08:00</updated>
+    <id>https://craigbeck.io/blog/2013/12/11/ui-dot-router-gotcha</id>
+    <content type="html"><![CDATA[<p>So I have a fairly simple <a href="http://angularjs.org">AngularJS</a> project using the new <a href="https://github.com/angular-ui/ui-router">Angular UI Router</a> and the project is scaffolded with the Yeoman angular generator. All is well when running locally in developer mode, but theres trouble once I run <code>grunt</code> and run with the grunt built/minified/uglified code &ndash; the browser would just hang (Safari) or outright crash (Chrome). Hmmm, thats definitely not right.</p>
+
+<p>My scripts are included in my <code>index.html</code> file like so:</p>
+
+<p>&#8220;`html</p>
+
+<!-- build:js({.tmp,app}) scripts/scripts.js -->
+
+
+<script src="scripts/app.js"></script>
+
+
+<script src="scripts/controllers/main.js"></script>
+
+
+<script src="scripts/controllers/realm.js"></script>
+
+
+<script src="scripts/services/realms.js"></script>
+
+
+<!-- endbuild -->
+
+
+<pre><code>
+The purpose of the comment lines are to delineate a block of the html that should be processed together -- in this case the individual files will be concatenated, minified, and then the &lt;code&gt;index.html&lt;/code&gt; will be rewritten to include the processed file &lt;code&gt;scripts.js&lt;/code&gt;
+
+After some non-productive mucking about with ordering and including/excluding files for processing, I cracked open the processed file. It's still fairly readable even with the minification that has taken place.
+
+## NgMin is cool
+
+One thing the angular generator set up is the use of [ngMin](https://github.com/btford/ngmin) so you can write your Javascript without having to worry about details of how it will be minified later so that this:
+</code></pre>
+
+<p>angular.module(&ldquo;indexApp&rdquo;,[
+    &ldquo;chieffancypants.loadingBar&rdquo;,&ldquo;ui.bootstrap&rdquo;,&ldquo;ui.router&rdquo;
+  ])
+  .config(function($urlRouterProvider, $stateProvider) {
+    // snip&hellip;
+  });
+&#8220;`</p>
+
+<p>is turned into this after grunt is done with it:</p>
+
+<pre><code class="js">angular.module("indexApp",[
+    "chieffancypants.loadingBar","ui.bootstrap","ui.router"
+  ])
+  .config(["$urlRouterProvider","$stateProvider",function(a,b) {
+    // snip...
+  }]);
+</code></pre>
+
+<p>Notice the arguments to the anonymous function passed to the config method in the before example. The whole argument has been rewritten as an array with the names of the arguments as strings followed by the function where the arguments have been replaced with the more succinct names &ldquo;a&rdquo; and &ldquo;b&rdquo;.</p>
+
+<p>This is cool. NgMin is aware of how Angular does it&rsquo;s dependency injection and rewrites it using the more verbose syntax Angular supports so we can still use our other tools for processing scripts.</p>
+
+<h2>But not all is well.</h2>
+
+<p>Here is one of my states that is setup in the anonymous funciton passed to the module&rsquo;s config method:</p>
+
+<pre><code class="js">$stateProvider
+  .state('main', {
+    url: '/',
+    templateUrl: 'views/main.html',
+    controller: 'MainCtrl',
+    resolve: {
+      allTheRealms: function(MyAppService) {
+        console.log('MainCtrl resolve', arguments);
+        return MyAppService.init();
+      }
+    }
+  })
+</code></pre>
+
+<p>I&rsquo;m using a service to make https requests against a service and this needs to be done on initialization so I&rsquo;m using the <code>$stateProvider</code> resolve property to initiate the asynchronous call to the server and once that succeeds its passed to my controller.</p>
+
+<p>This normally works great, but in this case the resolve function had its own dependency on a service. After Grunt had done its thing the code above looked like this:</p>
+
+<pre><code class="js">b.state('main', {
+  url: '/',
+  templateUrl: 'views/main.html',
+  controller: 'MainCtrl',
+  resolve: {
+    allTheRealms: function(a) {
+      return a.init();
+    }
+  }
+})
+</code></pre>
+
+<p>Notice the function argument is now just called <code>a</code>, and the <code>$stateProvider</code> is called <code>b</code>. This is not helpful as Angular&rsquo;s dependency-injection <em>magic</em> doesn&rsquo;t know what the function needs (i.e. I have no &ldquo;a&rdquo; service to be injected). Usually this files with an error about no &ldquo;aProvider&rdquo; found, but in this case <em>the browser was hanging and or crashing!</em></p>
+
+<h2>What is <code>a</code>?</h2>
+
+<p>Step back to the earlier example:</p>
+
+<pre><code class="js">angular.module("indexApp",[
+    "chieffancypants.loadingBar","ui.bootstrap","ui.router"
+  ])
+  .config(["$urlRouterProvider","$stateProvider",function(a,b) {
+    // snip...
+  }]);
+</code></pre>
+
+<p><code>a</code> is actually the <code>$urlRouterProvider</code> and we are calling <code>init()</code> on it. Not what we wanted at all. I haven&rsquo;t dug further but my guess is there is an <code>init</code> method on that and it&rsquo;s resulting in something nasty and probably recursive causing the Bad Things&trade;.</p>
+
+<p>Well once I saw that it was a quick Google of &ldquo;ui.router ngmin resolve&rdquo; and found this issue: <a href="https://github.com/btford/ngmin/issues/54">Support for ui-router resolve, onEnter and onExit</a></p>
+
+<p>So apparently ngMin for all its goodness misses on these properties in the state setup. The simple solution is go back to using the alternate Angular syntax for specifying the dependencies:</p>
+
+<pre><code class="js">$stateProvider
+  .state('main', {
+    url: '/',
+    templateUrl: 'views/main.html',
+    controller: 'MainCtrl',
+    resolve: {
+      allTheRealms: ['MyAppService', function(MyAppService) {
+        console.log('MainCtrl resolve', arguments);
+        return MyAppService.init();
+      }]
+    }
+  })
+</code></pre>
+
+<p>Once I had that sorted my app loaded fine!</p>
+
+<ul>
+<li><a href="http://docs.angularjs.org/guide/di">Angular Dependency Injection Guide</a></li>
+<li><a href="http://egghead.io/lessons/angularjs-resolve">Using Resolve property with route provider</a></li>
+<li><a href="http://egghead.io/lessons/angularjs-resolve-conventions">More about using resolve</a></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+</feed>
