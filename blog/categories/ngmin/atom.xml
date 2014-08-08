@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Ngmin | craigbeck]]></title>
-  <link href="https://craigbeck.io/blog/categories/ngmin/atom.xml" rel="self"/>
-  <link href="https://craigbeck.io/"/>
-  <updated>2014-08-08T13:57:55-07:00</updated>
-  <id>https://craigbeck.io/</id>
+  <link href="http://craigbeck.github.io/blog/categories/ngmin/atom.xml" rel="self"/>
+  <link href="http://craigbeck.github.io/"/>
+  <updated>2014-08-08T15:03:00-07:00</updated>
+  <id>http://craigbeck.github.io/</id>
   <author>
     <name><![CDATA[Craig Beck]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[ui.router and 'aProvider' Problems]]></title>
-    <link href="https://craigbeck.io/blog/2013/12/11/ui-dot-router-gotcha/"/>
+    <link href="http://craigbeck.github.io/blog/2013/12/11/ui-dot-router-gotcha/"/>
     <updated>2013-12-11T10:37:00-08:00</updated>
-    <id>https://craigbeck.io/blog/2013/12/11/ui-dot-router-gotcha</id>
+    <id>http://craigbeck.github.io/blog/2013/12/11/ui-dot-router-gotcha</id>
     <content type="html"><![CDATA[<p>So I have a fairly simple <a href="http://angularjs.org">AngularJS</a> project using the new <a href="https://github.com/angular-ui/ui-router">Angular UI Router</a> and the project is scaffolded with the Yeoman angular generator. All is well when running locally in developer mode, but theres trouble once I run <code>grunt</code> and run with the grunt built/minified/uglified code &ndash; the browser would just hang (Safari) or outright crash (Chrome). Hmmm, thats definitely not right.</p>
 
 <p>My scripts are included in my <code>index.html</code> file like so:</p>
