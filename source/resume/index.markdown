@@ -19,11 +19,7 @@ footer: true
     </div>
 </div>
 
-
-<div class="alert alert-warning">
-    <div class="alert-title">Hire me!</div>
-    <p>I'm available for full-time or freelance development in Seattle WA or remotely</p>
-</div>
+<hr/>
 
 The languages I am currently most fluent in are **Python** and **Javascript**,
 although I have done work with Java and C#, and would *love* to
