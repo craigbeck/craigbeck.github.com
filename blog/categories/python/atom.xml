@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Python | craigbeck]]></title>
+  <link href="http://craigbeck.github.io/blog/categories/python/atom.xml" rel="self"/>
+  <link href="http://craigbeck.github.io/"/>
+  <updated>2014-08-08T15:17:08-07:00</updated>
+  <id>http://craigbeck.github.io/</id>
+  <author>
+    <name><![CDATA[Craig Beck]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Generator-pymod]]></title>
+    <link href="http://craigbeck.github.io/blog/2013/11/08/generator-pymod/"/>
+    <updated>2013-11-08T17:39:00-08:00</updated>
+    <id>http://craigbeck.github.io/blog/2013/11/08/generator-pymod</id>
+    <content type="html"><![CDATA[<p>This is just about the simplest <a href="http://yeoman.io/generators.html">Yeoman generator</a> one could come up with. It doesn&rsquo;t do much beyond creating basic directory structure and template a couple boilerplate files for a Python module.</p>
+
+<pre><code>setup.py
+README.md
+/__init__.py
+/__main__.py
+</code></pre>
+
+<p><strong>npm</strong>: <a href="https://npmjs.org/package/generator-pymod">https://npmjs.org/package/generator-pymod</a><br>
+<strong>github</strong>: <a href="https://github.com/craigbeck/generator-pymod">https://github.com/craigbeck/generator-pymod</a></p>
+]]></content>
+  </entry>
+  
+</feed>

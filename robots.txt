@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: 
+
+Sitemap: http://craigbeck.github.io/sitemap.xml 

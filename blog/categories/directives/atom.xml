@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Directives | craigbeck]]></title>
+  <link href="http://craigbeck.github.io/blog/categories/directives/atom.xml" rel="self"/>
+  <link href="http://craigbeck.github.io/"/>
+  <updated>2014-08-08T15:17:08-07:00</updated>
+  <id>http://craigbeck.github.io/</id>
+  <author>
+    <name><![CDATA[Craig Beck]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[AngularJS Key Binding Directives]]></title>
+    <link href="http://craigbeck.github.io/blog/2014/01/14/angularjs-key-binding-directives/"/>
+    <updated>2014-01-14T10:29:00-08:00</updated>
+    <id>http://craigbeck.github.io/blog/2014/01/14/angularjs-key-binding-directives</id>
+    <content type="html"><![CDATA[<p><a href="https://github.com/mgonto/mgo-mousetrap">mgo-mousetrap</a> is a cool
+looking AngularJS library for binding keyboard events in the
+browser using directives.</p>
+
+<p>I love when web apps provide nice keyboard shortcuts and it&rsquo;s something
+I add where appropriate to improve the UX experience, so this will be
+going in the toolbox for later.</p>
+]]></content>
+  </entry>
+  
+</feed>
