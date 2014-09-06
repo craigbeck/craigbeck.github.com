@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Directives | craigbeck]]></title>
-  <link href="http://craigbeck.github.io/blog/categories/directives/atom.xml" rel="self"/>
-  <link href="http://craigbeck.github.io/"/>
-  <updated>2014-08-08T15:17:08-07:00</updated>
-  <id>http://craigbeck.github.io/</id>
+  <link href="http://craigbeck.io/blog/categories/directives/atom.xml" rel="self"/>
+  <link href="http://craigbeck.io/"/>
+  <updated>2014-09-05T17:32:12-07:00</updated>
+  <id>http://craigbeck.io/</id>
   <author>
     <name><![CDATA[Craig Beck]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[AngularJS Key Binding Directives]]></title>
-    <link href="http://craigbeck.github.io/blog/2014/01/14/angularjs-key-binding-directives/"/>
+    <link href="http://craigbeck.io/blog/2014/01/14/angularjs-key-binding-directives/"/>
     <updated>2014-01-14T10:29:00-08:00</updated>
-    <id>http://craigbeck.github.io/blog/2014/01/14/angularjs-key-binding-directives</id>
+    <id>http://craigbeck.io/blog/2014/01/14/angularjs-key-binding-directives</id>
     <content type="html"><![CDATA[<p><a href="https://github.com/mgonto/mgo-mousetrap">mgo-mousetrap</a> is a cool
 looking AngularJS library for binding keyboard events in the
 browser using directives.</p>

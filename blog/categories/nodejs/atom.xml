@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Nodejs | craigbeck]]></title>
-  <link href="http://craigbeck.github.io/blog/categories/nodejs/atom.xml" rel="self"/>
-  <link href="http://craigbeck.github.io/"/>
-  <updated>2014-08-08T15:17:08-07:00</updated>
-  <id>http://craigbeck.github.io/</id>
+  <link href="http://craigbeck.io/blog/categories/nodejs/atom.xml" rel="self"/>
+  <link href="http://craigbeck.io/"/>
+  <updated>2014-09-05T17:32:12-07:00</updated>
+  <id>http://craigbeck.io/</id>
   <author>
     <name><![CDATA[Craig Beck]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[The Open Source Pit of Success]]></title>
-    <link href="http://craigbeck.github.io/blog/2013/11/09/the-open-source-pit-of-success/"/>
+    <link href="http://craigbeck.io/blog/2013/11/09/the-open-source-pit-of-success/"/>
     <updated>2013-11-09T17:44:00-08:00</updated>
-    <id>http://craigbeck.github.io/blog/2013/11/09/the-open-source-pit-of-success</id>
+    <id>http://craigbeck.io/blog/2013/11/09/the-open-source-pit-of-success</id>
     <content type="html"><![CDATA[<p>I just published my first public project &ndash; <a href="http://github.com/craigbeck/generator-pymod">generator-pymod</a>. It is a super-simple <a href="http://yeoman.io/generators.html">Yeoman generator</a> that creates a couple of files and a directory in the form of a Python module. As I said, simple. It&rsquo;s not much to do by hand, but I <em>hate</em> doing things over and over that a script would be better at doing for me, and I <em>hate</em> having to remember minutiae.</p>
 
 <p>So I decided to automate this using Yeoman. I know I could have done this with a simple bash script (actually I did), but I wanted to learn how to put together a very simple generator by actually doing it. The end result  is that I learned a thing or two about yeoman, but more importantly my eyes were opened to how easy things like <a href="http://npmjs.org">npm</a> make it to <a href="https://npmjs.org/package/generator-pymod">publish my first npm package</a>.</p>
@@ -28,9 +28,9 @@
   
   <entry>
     <title type="html"><![CDATA[Generator-pymod]]></title>
-    <link href="http://craigbeck.github.io/blog/2013/11/08/generator-pymod/"/>
+    <link href="http://craigbeck.io/blog/2013/11/08/generator-pymod/"/>
     <updated>2013-11-08T17:39:00-08:00</updated>
-    <id>http://craigbeck.github.io/blog/2013/11/08/generator-pymod</id>
+    <id>http://craigbeck.io/blog/2013/11/08/generator-pymod</id>
     <content type="html"><![CDATA[<p>This is just about the simplest <a href="http://yeoman.io/generators.html">Yeoman generator</a> one could come up with. It doesn&rsquo;t do much beyond creating basic directory structure and template a couple boilerplate files for a Python module.</p>
 
 <pre><code>setup.py

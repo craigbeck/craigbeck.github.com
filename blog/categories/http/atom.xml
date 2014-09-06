@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Http | craigbeck]]></title>
-  <link href="http://craigbeck.github.io/blog/categories/http/atom.xml" rel="self"/>
-  <link href="http://craigbeck.github.io/"/>
-  <updated>2014-08-08T15:17:08-07:00</updated>
-  <id>http://craigbeck.github.io/</id>
+  <link href="http://craigbeck.io/blog/categories/http/atom.xml" rel="self"/>
+  <link href="http://craigbeck.io/"/>
+  <updated>2014-09-05T17:32:12-07:00</updated>
+  <id>http://craigbeck.io/</id>
   <author>
     <name><![CDATA[Craig Beck]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[MITMProxy: Fiddler for OSX]]></title>
-    <link href="http://craigbeck.github.io/blog/2014/01/13/mitmproxy-fiddler-for-osx/"/>
+    <link href="http://craigbeck.io/blog/2014/01/13/mitmproxy-fiddler-for-osx/"/>
     <updated>2014-01-13T10:45:00-08:00</updated>
-    <id>http://craigbeck.github.io/blog/2014/01/13/mitmproxy-fiddler-for-osx</id>
+    <id>http://craigbeck.io/blog/2014/01/13/mitmproxy-fiddler-for-osx</id>
     <content type="html"><![CDATA[<p>One of the tools I miss from developing on Windows is <a href="http://fiddler2.com">Fiddler</a>. It is the best tool I&rsquo;ve used for inspecting and debugging HTTP traffic and something I turned to frequently when developing service and client-side code. They do have an &ldquo;alpha&rdquo; build for Linux and OSX on the Mono framework, but last I checked it was so buggy as to be unusable. Recently I discovered the python project <a href="http://mitmproxy.org/doc/mitmproxy.html">MITMProxy</a> which is a commandline tool that has a lot of the same features as Fiddler. Its a UI in the terminal, which I don&rsquo;t mind at all as long as its usable and the features are there.</p>
 
 <p>Check out the project at <a href="http://mitmproxy.org">mitmproxy.org</a></p>
