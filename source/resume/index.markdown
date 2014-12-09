@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "resume"
-date: 2014-08-06
+date: 2014-12-08
 comments: false
 sharing: true
 footer: true
@@ -22,7 +22,7 @@ footer: true
 <hr/>
 
 The languages I am currently most fluent in are **Python** and **Javascript**,
-although I have done work with Java and C#, and would *love* to
+although I have done work with Java and C#, I am most passionate to
 work with **node.js**, **Ruby**, or **Elixir** and **Erlang**.
 
 I am most comfortable with agile development processes and enjoy
@@ -33,11 +33,11 @@ pair-programming and practicing TDD and BDD
 
 ### Primary Technologies
 
-Javascript, AngularJS, Python, HTML, CSS 3, Bootstrap, Amazon Web Services (EC2, S3, Route53, SNS, SQS, Cloudwatch), OSX, BASH
+Javascript, [NodeJS](http://nodejs.org), [AngularJS](http://angularjs.org), Python, HTML, CSS 3, [Bootstrap](http://getbootstrap.com), Amazon Web Services (EC2, S3, Route53, SNS, SQS, Cloudwatch), OS X, Bash
 
-### Seconday Technology
+### Secondary Technologies
 
-Java, Node, Grunt, SASS, LESS, D3, Elasticsearch, ZeroMQ, Apache Zookeeper, MySQL, Postgres 
+[Grunt.js](http://gruntjs.com), [Gulp.js](http://gulpjs.com), SASS, LESS, D3, [Elasticsearch](http://elasticsearch.org), [ZeroMQ](http://zeromq.org), [Apache Zookeeper](http://zookeeper.apache.org), MySQL, Postgres, [CouchDB](http://couchdb.apache.org), [Docker](http://docker.com), [Vagrant](http://vagrantup.com), Java
 
 ### Past Technologies
 
@@ -46,10 +46,19 @@ C# 2.0-4.0, ASP.NET MVC 3, Linq, Knockout.JS, NUnit, RabbitMQ, MassTransit, WCF,
 
 ## Experience
 
+### [General UI](http://generalui.com) - Senior Software Engineer
+12/2014-present
+
+Full-stack NodeJS application development
+
+### [Formidable Labs](http://formidablelabs.com) - Software Engineer
+09/2014-11/2014
+
+Full-stack NodeJS application development for clients. Porting business intellegence application written in Rails to Node and rapid prototyping of enterprise release-management application for clients.
 
 ### [A6 Corporation](http://www.a6corp.com) – Software Developer 11/2012-07/2014
 
-Working on next-generation big-data advertising platform as part of a small developer team. Built real-time web applications for business and operations, prototype data visualization apps, and external customer facing applications using Python, AngularJS and related web technologies. Integrated monitoring systems with external APIs using custom Python and Java metrics collection and external APIs (Librato, PagerDuty, AWS SQS, Nsq)
+Worked on next-generation big-data advertising platform as part of a small developer team. Built real-time web applications for business and operations, prototype data visualization apps, and external customer facing applications using Python, AngularJS and related web technologies. Integrated monitoring systems with external APIs using custom Python and Java metrics collection and external APIs (Librato, PagerDuty, AWS SQS, Nsq)
 
 ### [POP](http://www.popagency.com) – Senior Software Engineer 04/2012-10/2012 (contract)
 

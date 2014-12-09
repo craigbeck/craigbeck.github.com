@@ -9,7 +9,7 @@ footer: true
 
 ## Me
 
-I'm a recovering .NET developer currently working with Python, Javascript, AngularJS, and Java, most recently at [A6 Corporation](http://www.a6corp.com/).
+I'm a full-stack developer currently working with [NodeJS](http://nodejs.org), [AngularJS](http://angularjs.org), [React](http://facebook.github.io/react/), most recently at [Formidable Labs](http://formidablelabs.com/) and [General UI](http://generalui.com).
 
 [Here's a summary](/resume/) of what I have done.
 
