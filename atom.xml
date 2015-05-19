@@ -4,7 +4,7 @@
   <title><![CDATA[craigbeck]]></title>
   <link href="http://craigbeck.io/atom.xml" rel="self"/>
   <link href="http://craigbeck.io/"/>
-  <updated>2014-12-09T12:56:21-08:00</updated>
+  <updated>2015-05-19T16:25:10-07:00</updated>
   <id>http://craigbeck.io/</id>
   <author>
     <name><![CDATA[Craig Beck]]></name>
@@ -12,6 +12,34 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Bartini Beriev VVA-14]]></title>
+    <link href="http://craigbeck.io/blog/2015/05/19/bartini-beriev-vva-14/"/>
+    <updated>2015-05-19T16:16:12-07:00</updated>
+    <id>http://craigbeck.io/blog/2015/05/19/bartini-beriev-vva-14</id>
+    <content type="html"><![CDATA[<p><a href="http://en.wikipedia.org/wiki/Bartini_Beriev_VVA-14">Bartinit Beriev
+VVA-14</a></p>
+
+<p>This thing is so cool looking. The Russians had some seriously wierd
+looking surface effect aircraft.</p>
+
+<p><img src="http://upload.wikimedia.org/wikipedia/commons/7/7d/Beriev_VVA-14_in_2010.jpg" alt="Beriev VVA-14 in 2010.jpg" height="800" width="1200"></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Probelms With Promises]]></title>
+    <link href="http://craigbeck.io/blog/2015/05/19/probelms-with-promises/"/>
+    <updated>2015-05-19T16:06:38-07:00</updated>
+    <id>http://craigbeck.io/blog/2015/05/19/probelms-with-promises</id>
+    <content type="html"><![CDATA[<p><a href="http://pouchdb.com/2015/05/18/we-have-a-problem-with-promises.html">We Have a Problem with
+Promises</a>
+is a fantastic run through of using JS promises and common pitfalls. I
+feel very comfortable reaching for promises and use them all the time,
+but there were a couple of things in here that surprised me.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[AngularJS Key Binding Directives]]></title>
