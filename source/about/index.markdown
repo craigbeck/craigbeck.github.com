@@ -9,7 +9,7 @@ footer: true
 
 ## Me
 
-I'm a full-stack developer currently working with [NodeJS](http://nodejs.org), [AngularJS](http://angularjs.org), [React](http://facebook.github.io/react/), most recently at [Formidable Labs](http://formidablelabs.com/) and [General UI](http://generalui.com).
+I'm a full-stack developer currently working with [NodeJS](http://nodejs.org), [AngularJS](http://angularjs.org), [React](http://facebook.github.io/react/), most recently at [Formidable Labs](http://formidablelabs.com/) and [General UI](http://generalui.com), and now building the next generation of web applications at [Zipwhip](http://www.zipwhip.com).
 
 [Here's a summary](/resume/) of what I have done.
 
@@ -17,5 +17,3 @@ I'm a full-stack developer currently working with [NodeJS](http://nodejs.org), [
 ## This Site
 
 Built with [Octopress](http://octopress.org) and the [readify theme](https://github.com/vladigleba/readify) and hosted via [GitHub Pages](http://pages.github.com).
-
-

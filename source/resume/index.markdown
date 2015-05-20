@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "resume"
-date: 2014-12-08
+date: 2015-05-20
 comments: false
 sharing: true
 footer: true
@@ -12,7 +12,7 @@ footer: true
     <div class="h-adr">
         <span class="p-locality">Seattle</span>, <span class="p-region">Washington</span>
     </div>
-    
+
     <div class="properties">
         <a class="u-email" href="mailto:luckybonza@gmail.com">luckybonza@gmail.com</a> <span class="muted">&star;</span> <span class="p-tel">206-390-4022</span><br/>
         <a href="http://www.linkedin.com/pub/craig-beck/9/a48/554">LinkedIn</a> <span class="muted">&star;</span> <a href="https://github.com/craigbeck">Github</a>
@@ -21,23 +21,23 @@ footer: true
 
 <hr/>
 
-The languages I am currently most fluent in are **Python** and **Javascript**,
+The languages I am currently most fluent in are **Javascript** and **Python**,
 although I have done work with Java and C#, I am most passionate to
-work with **node.js**, **Ruby**, or **Elixir** and **Erlang**.
+work with **node.js**, **Ruby**, or **Elixir** and **Erlang** to create [native web apps](https://blog.andyet.com/2015/01/22/native-web-apps) and supporting APIs.
 
 I am most comfortable with agile development processes and enjoy
-pair-programming and practicing TDD and BDD
+pair-programming and practicing <abbr title="Test Diven Development">[TDD](http://en.wikipedia.org/wiki/Test-driven_development)</abbr> and <abbr title="Behaviour Diven Development">[BDD](http://en.wikipedia.org/wiki/Behavior-driven_development)</abbr>
 
 
 ## Technical Skills
 
 ### Primary Technologies
 
-Javascript, [NodeJS](http://nodejs.org), [AngularJS](http://angularjs.org), Python, HTML, CSS 3, [Bootstrap](http://getbootstrap.com), Amazon Web Services (EC2, S3, Route53, SNS, SQS, Cloudwatch), OS X, Bash
+Javascript, [NodeJS](http://nodejs.org), [ReactJS](http://facebook.github.io/react/), [AngularJS](http://angularjs.org), Python, HTML, CSS 3, [Bootstrap](http://getbootstrap.com), Amazon Web Services (EC2, S3, Route53, SNS, SQS, Cloudwatch), OS X, Bash
 
 ### Secondary Technologies
 
-[Grunt.js](http://gruntjs.com), [Gulp.js](http://gulpjs.com), SASS, LESS, D3, [Elasticsearch](http://elasticsearch.org), [ZeroMQ](http://zeromq.org), [Apache Zookeeper](http://zookeeper.apache.org), MySQL, Postgres, [CouchDB](http://couchdb.apache.org), [Docker](http://docker.com), [Vagrant](http://vagrantup.com), Java
+[Webpack](http://webpack.github.io), [Grunt.js](http://gruntjs.com), [Gulp.js](http://gulpjs.com), [SASS](http://sass-lang.com), [LESS](http://lesscss.org), [D3](http://d3js.org), [Elasticsearch](http://elasticsearch.org), [ZeroMQ](http://zeromq.org), [Apache Zookeeper](http://zookeeper.apache.org), MySQL, Postgres, [CouchDB](http://couchdb.apache.org), [Docker](http://docker.com), [Vagrant](http://vagrantup.com)
 
 ### Past Technologies
 
@@ -46,13 +46,15 @@ C# 2.0-4.0, ASP.NET MVC 3, Linq, Knockout.JS, NUnit, RabbitMQ, MassTransit, WCF,
 
 ## Experience
 
-### [General UI](http://generalui.com) - Senior Software Engineer
-12/2014-present
+### [Zipwhip](http://www.zipwhip.com) - Senior Front-End Engineer 03/2015-present
 
-Full-stack NodeJS application development
+Full stack node.js web development including the [corporate website](http://www.zipwhip.com) as well as the next generation of the Zipwhip messaging [web application](http://www.zipwhip.com/app/web).  
 
-### [Formidable Labs](http://formidablelabs.com) - Software Engineer
-09/2014-11/2014
+### [General UI](http://generalui.com) - Senior Software Engineer 12/2014-03/2015
+
+Full-stack node.js development and consulting.
+
+### [Formidable Labs](http://formidablelabs.com) - Software Engineer 09/2014-11/2014
 
 Full-stack NodeJS application development for clients. Porting business intellegence application written in Rails to Node and rapid prototyping of enterprise release-management application for clients.
 
@@ -62,7 +64,7 @@ Worked on next-generation big-data advertising platform as part of a small devel
 
 ### [POP](http://www.popagency.com) – Senior Software Engineer 04/2012-10/2012 (contract)
 
-Design and implemented new features for [WordFly](http://www.wordfly.com) SAAS application for arts organizations. Developed solutions to handle scaling and reliability issues using RabbitMQ cluster and MassTransit service bus for distributed asynchronous processing of application events. Improved CI process for increased reliability of deliverables. 
+Design and implemented new features for [WordFly](http://www.wordfly.com) SAAS application for arts organizations. Developed solutions to handle scaling and reliability issues using RabbitMQ cluster and MassTransit service bus for distributed asynchronous processing of application events. Improved CI process for increased reliability of deliverables.
 
 ### [Blue Rooster](http://www.bluerooster.com) – JavaScript Developer 04/2012-05/2012 (contract)
 
@@ -82,9 +84,8 @@ Responsible for designing and building features for green field system to pull d
 
 ### [Atlas Solutions](http://atlassolutions.com) – Release Engineer, 12/2005 – 04/2006
 
-Worked with Atlas’ build operations team to support development projects. Daily duties include maintaining build and deployment project scripts, troubleshooting automated builds, administering VSS, developing internal deployment tools using C# and XML, implementing VSS to Subversion migration, and administrating source repositories. 
+Worked with Atlas’ build operations team to support development projects. Daily duties include maintaining build and deployment project scripts, troubleshooting automated builds, administering VSS, developing internal deployment tools using C# and XML, implementing VSS to Subversion migration, and administrating source repositories.
 
 ### [Atlas Solutions](http://atlassolutions.com) – Build Operations (Intern), 09/2005 – 12/2005
 
 Worked with Atlas’ build operations team to support development projects. Daily duties include maintaining build and deployment project scripts, troubleshooting automated build and test failures, developing internal deployment tools using C# and XML
-
