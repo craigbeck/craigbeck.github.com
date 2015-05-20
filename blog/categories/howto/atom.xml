@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Howto | craigbeck]]></title>
+  <link href="http://craigbeck.io/blog/categories/howto/atom.xml" rel="self"/>
+  <link href="http://craigbeck.io/"/>
+  <updated>2015-05-20T16:59:27-07:00</updated>
+  <id>http://craigbeck.io/</id>
+  <author>
+    <name><![CDATA[Craig Beck]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Socket.io Links]]></title>
+    <link href="http://craigbeck.io/blog/2015/05/20/using-hapi-dot-js-with-socket-dot-io/"/>
+    <updated>2015-05-20T16:19:48-07:00</updated>
+    <id>http://craigbeck.io/blog/2015/05/20/using-hapi-dot-js-with-socket-dot-io</id>
+    <content type="html"><![CDATA[<p><a href="http://matt-harrison.com/using-hapi-js-with-socket-io/">Using hapi.js with socket.io</a><br/>
+Matt Harrison (author of the upcoming book &ldquo;Hapi.js in Action&rdquo;) has a good post on using <a href="http://hapijs.com">hapi.js</a> with <a href="http://socket.io">socket.io</a>. It&rsquo;s really simple to set up and he shows a couple of more interesting examples when using hapi when listening on multiple ports.</p>
+
+<p><a href="http://socketcluster.io">SocketCluster</a><br/>
+SocketCluster is an open-source multi-process clustered framework built to scale across multiple cores and multiple instances. It looks very interesting for taking a lot of the concerns for scaling a socket service and providing a framework for plugging in your own code. I haven&rsquo;t used this yet but look forward using it.</p>
+]]></content>
+  </entry>
+  
+</feed>
