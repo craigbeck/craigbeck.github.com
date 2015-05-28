@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: React | craigbeck]]></title>
+  <link href="http://craigbeck.io/blog/categories/react/atom.xml" rel="self"/>
+  <link href="http://craigbeck.io/"/>
+  <updated>2015-05-27T21:23:55-07:00</updated>
+  <id>http://craigbeck.io/</id>
+  <author>
+    <name><![CDATA[Craig Beck]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Survive.js]]></title>
+    <link href="http://craigbeck.io/blog/2015/05/27/survive-dot-js/"/>
+    <updated>2015-05-27T21:15:37-07:00</updated>
+    <id>http://craigbeck.io/blog/2015/05/27/survive-dot-js</id>
+    <content type="html"><![CDATA[<p><a href="http://survivejs.com">Survive.js</a> is a fantastic book on
+<a href="https://facebook.github.io/react/">React</a> and
+<a href="https://webpack.github.io/">Webpack</a>. It&rsquo;s an open source ebook and is
+still under development but I&rsquo;ve found quite a few things I didn&rsquo;t know
+and could immediately apply to my current React+Webpack projects.
+Webpack is an amazing tool but it has a steep learning curve (and the
+documentation is lacking) so I wish I had this months ago!</p>
+]]></content>
+  </entry>
+  
+</feed>
