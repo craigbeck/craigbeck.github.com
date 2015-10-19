@@ -9,10 +9,10 @@
   <meta name="author" content="Craig Beck">
 
   
-  <meta name="description" content="Survive.js is a fantastic book on
-React and
-Webpack. It&rsquo;s an open source ebook and is
-still under development but I&rsquo;ve found quite a few &hellip;">
+  <meta name="description" content="This
+article by Tero Parviainen (@teropa)
+is one of the best full-stack Redux &amp; React examples I&rsquo;ve come across
+lately, covering the server &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -73,6 +73,116 @@ still under development but I&rsquo;ve found quite a few &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2015/10/19/react-and-redux-tutorial-including-testing/">React &amp; Redux Tutorial (Including Testing!)</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-10-19T10:29:41-07:00" pubdate data-updated="true">Oct 19<sup>th</sup>, 2015</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://teropa.info/blog/2015/09/10/full-stack-redux-tutorial.html">This
+article</a> by <a href="http://teropa.info">Tero Parviainen</a> (<a href="https://twitter.com/teropa">@teropa</a>)
+is one of the best full-stack Redux &amp; React examples I&rsquo;ve come across
+lately, covering the server-side, thinking about application state,
+socket.io, and testing react components.</p>
+
+<p>Well worth the read.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2015/10/17/hapi-dot-js-and-invalid-cookies/">Hapi.js &amp; Invalid Cookies</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-10-17T12:36:04-07:00" pubdate data-updated="true">Oct 17<sup>th</sup>, 2015</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I love using <a href="http://hapijs.com">Hapi.js</a>, but every time I start a new
+project with it I have this problem where all my requests get 400
+responses due to an invalid cookie value.</p>
+
+<p>My new shiny hapi app doesn&rsquo;t care about cookies. I don&rsquo;t want it to care
+about cookies. But it still does. By default, hapi tries to read all the
+cookies that were sent with the request, <em>including signed cookies set
+by express</em>. Of course, as I&rsquo;ve a habit of developing on localhost, and
+because we have multiple apps on the same domain (java, express, as well
+as hapi) where <em>some</em> of those apps care about these cookies, these
+cookies are going to get sent along with the request to an app that
+doesnt care about them. Hapi does it&rsquo;s job to try and verify the signed
+express cookie and fails (it doesn&rsquo;t have any way to actually verify,
+i.e. no keys/secrets used in the signing), retuning the 400.</p>
+
+<p>So every new hapi service I start with now I ignore cookie errors:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="nx">server</span><span class="p">.</span><span class="nx">connection</span><span class="p">({</span>
+</span><span class='line'>  <span class="nx">port</span><span class="o">:</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">PORT</span> <span class="o">||</span> <span class="mi">8000</span><span class="p">,</span>
+</span><span class='line'>  <span class="nx">state</span><span class="o">:</span> <span class="p">{</span>
+</span><span class='line'>    <span class="nx">ignoreErrors</span><span class="o">:</span> <span class="kc">true</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'><span class="p">});</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -198,88 +308,6 @@ looking surface effect aircraft.</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2015/05/19/probelms-with-promises/">Probelms With Promises</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2015-05-19T16:06:38-07:00" pubdate data-updated="true">May 19<sup>th</sup>, 2015</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="http://pouchdb.com/2015/05/18/we-have-a-problem-with-promises.html">We Have a Problem with
-Promises</a>
-is a fantastic run through of using JS promises and common pitfalls. I
-feel very comfortable reaching for promises and use them all the time,
-but there were a couple of things in here that surprised me.</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/01/14/angularjs-key-binding-directives/">AngularJS Key Binding Directives</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-01-14T10:29:00-08:00" pubdate data-updated="true">Jan 14<sup>th</sup>, 2014</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="https://github.com/mgonto/mgo-mousetrap">mgo-mousetrap</a> is a cool
-looking AngularJS library for binding keyboard events in the
-browser using directives.</p>
-
-<p>I love when web apps provide nice keyboard shortcuts and it&rsquo;s something
-I add where appropriate to improve the UX experience, so this will be
-going in the toolbox for later.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/posts/2">&larr; Older</a>
@@ -295,6 +323,14 @@ going in the toolbox for later.</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2015/10/19/react-and-redux-tutorial-including-testing/">React &amp; Redux Tutorial (Including Testing!)</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/10/17/hapi-dot-js-and-invalid-cookies/">Hapi.js &amp; Invalid Cookies</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2015/05/27/survive-dot-js/">Survive.js</a>
       </li>
     
@@ -304,14 +340,6 @@ going in the toolbox for later.</p>
     
       <li class="post">
         <a href="/blog/2015/05/19/bartini-beriev-vva-14/">Bartini Beriev VVA-14</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/05/19/probelms-with-promises/">Probelms With Promises</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/01/14/angularjs-key-binding-directives/">AngularJS Key Binding Directives</a>
       </li>
     
   </ul>

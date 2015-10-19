@@ -4,7 +4,7 @@
   <title><![CDATA[Category: socket.io | craigbeck]]></title>
   <link href="http://craigbeck.io/blog/categories/socket-dot-io/atom.xml" rel="self"/>
   <link href="http://craigbeck.io/"/>
-  <updated>2015-05-27T21:26:13-07:00</updated>
+  <updated>2015-10-19T10:59:11-07:00</updated>
   <id>http://craigbeck.io/</id>
   <author>
     <name><![CDATA[Craig Beck]]></name>
@@ -12,6 +12,21 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[React &amp; Redux Tutorial (Including Testing!)]]></title>
+    <link href="http://craigbeck.io/blog/2015/10/19/react-and-redux-tutorial-including-testing/"/>
+    <updated>2015-10-19T10:29:41-07:00</updated>
+    <id>http://craigbeck.io/blog/2015/10/19/react-and-redux-tutorial-including-testing</id>
+    <content type="html"><![CDATA[<p><a href="http://teropa.info/blog/2015/09/10/full-stack-redux-tutorial.html">This
+article</a> by <a href="http://teropa.info">Tero Parviainen</a> (<a href="https://twitter.com/teropa">@teropa</a>)
+is one of the best full-stack Redux &amp; React examples I&rsquo;ve come across
+lately, covering the server-side, thinking about application state,
+socket.io, and testing react components.</p>
+
+<p>Well worth the read.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Socket.io Links]]></title>
