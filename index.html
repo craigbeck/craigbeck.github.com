@@ -9,10 +9,7 @@
   <meta name="author" content="Craig Beck">
 
   
-  <meta name="description" content="This
-article by Tero Parviainen (@teropa)
-is one of the best full-stack Redux &amp; React examples I&rsquo;ve come across
-lately, covering the server &hellip;">
+  <meta name="description" content="So with recent software updated on OS X (including newest Safari 9.0.1) and also updating a project to latest version of hapi.js(v11) CORS requests &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -73,6 +70,79 @@ lately, covering the server &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2015/10/27/safari-plus-hapi-dot-js-plus-cors-equals-404/">Safari + Hapi.js + CORS = 404</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-10-27T18:34:37-07:00" pubdate data-updated="true">Oct 27<sup>th</sup>, 2015</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>So with recent software updated on OS X (including newest Safari 9.0.1) and <em>also</em> updating a project to latest version of <a href="http://hapijs.com">hapi.js</a>(v11) CORS requests are broken.</p>
+
+<p>It appears Safari now sends an Access-Control-Request-Headers value of &ldquo;accept, origin, authorization&rdquo;, while Hapi has a default configuration for CORS headers doesn&rsquo;t include &ldquo;origin&rdquo;. Chrome meanwhile, was still working only sending &ldquo;accept, authorization&rdquo; for the header value.</p>
+
+<p>The solution is to tell Hapi to also accept &ldquo;origin&rdquo; as a CORS request header value:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="nx">server</span><span class="p">.</span><span class="nx">connection</span><span class="p">({</span>
+</span><span class='line'>  <span class="nx">port</span><span class="o">:</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">PORT</span> <span class="o">||</span> <span class="mi">8081</span><span class="p">,</span>
+</span><span class='line'>  <span class="nx">routes</span><span class="o">:</span> <span class="p">{</span>
+</span><span class='line'>    <span class="nx">cors</span><span class="o">:</span> <span class="p">{</span>
+</span><span class='line'>      <span class="nx">additionalHeaders</span><span class="o">:</span> <span class="p">[</span>
+</span><span class='line'>        <span class="s2">&quot;Origin&quot;</span>
+</span><span class='line'>      <span class="p">]</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'><span class="p">});</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>There have been a few changes in configuration and handling of CORS in Hapi of late, so this may not be needed down the road if changes are made to the default configuration.</p>
+
+<h2>Related Issues:</h2>
+
+<ul>
+<li><a href="https://github.com/hapijs/hapi/issues/2868">&ldquo;CORS: Is 404 on OPTIONS request the right thing to do?&rdquo;</a></li>
+<li><a href="https://github.com/hapijs/hapi/issues/2853">&ldquo;Request header field Content-Type is not allowed by Access-Control-Allow-Headers in preflight response.&rdquo;</a></li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -266,48 +336,6 @@ SocketCluster is an open-source multi-process clustered framework built to scale
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2015/05/19/bartini-beriev-vva-14/">Bartini Beriev VVA-14</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2015-05-19T16:16:12-07:00" pubdate data-updated="true">May 19<sup>th</sup>, 2015</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="http://en.wikipedia.org/wiki/Bartini_Beriev_VVA-14">Bartinit Beriev
-VVA-14</a></p>
-
-<p>This thing is so cool looking. The Russians had some seriously wierd
-looking surface effect aircraft.</p>
-
-<p><img src="http://upload.wikimedia.org/wikipedia/commons/7/7d/Beriev_VVA-14_in_2010.jpg" alt="Beriev VVA-14 in 2010.jpg" height="800" width="1200"></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/posts/2">&larr; Older</a>
@@ -323,6 +351,10 @@ looking surface effect aircraft.</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2015/10/27/safari-plus-hapi-dot-js-plus-cors-equals-404/">Safari + Hapi.js + CORS = 404</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2015/10/19/react-and-redux-tutorial-including-testing/">React &amp; Redux Tutorial (Including Testing!)</a>
       </li>
     
@@ -336,10 +368,6 @@ looking surface effect aircraft.</p>
     
       <li class="post">
         <a href="/blog/2015/05/20/using-hapi-dot-js-with-socket-dot-io/">Socket.io Links</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/05/19/bartini-beriev-vva-14/">Bartini Beriev VVA-14</a>
       </li>
     
   </ul>

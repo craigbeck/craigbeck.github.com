@@ -3,6 +3,12 @@
   
   
   <url>
+    <loc>http://craigbeck.io/blog/2015/10/27/safari-plus-hapi-dot-js-plus-cors-equals-404/</loc>
+    <lastmod>2015-10-27T18:34:37-07:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
     <loc>http://craigbeck.io/blog/2015/10/19/react-and-redux-tutorial-including-testing/</loc>
     <lastmod>2015-10-19T10:29:41-07:00</lastmod>
     <priority>0.8</priority>
@@ -71,28 +77,28 @@
   
   <url>
     <loc>http://craigbeck.io/blog/archives/</loc>
-    <lastmod>2015-10-19T10:59:11-07:00</lastmod>
+    <lastmod>2015-10-28T10:44:54-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://craigbeck.io/</loc>
-    <lastmod>2015-10-19T10:59:11-07:00</lastmod>
+    <lastmod>2015-10-28T10:44:54-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   
   <url>
     <loc>http://craigbeck.io/about/</loc>
-    <lastmod>2015-10-19T10:59:11-07:00</lastmod>
+    <lastmod>2015-10-28T10:44:54-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://craigbeck.io/resume/</loc>
-    <lastmod>2015-10-19T10:59:11-07:00</lastmod>
+    <lastmod>2015-10-28T10:44:54-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>

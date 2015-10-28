@@ -5,13 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Hapi.js &amp; Invalid Cookies - craigbeck</title>
+  <title>Category: Cors - craigbeck</title>
   <meta name="author" content="Craig Beck">
 
   
-  <meta name="description" content="I love using Hapi.js, but every time I start a new
-project with it I have this problem where all my requests get 400
-responses due to an invalid &hellip;">
+  <meta name="description" content="Category: cors">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -20,7 +18,7 @@ responses due to an invalid &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://craigbeck.io/blog/2015/10/17/hapi-dot-js-and-invalid-cookies">
+  <link rel="canonical" href="http://craigbeck.io/blog/categories/cors">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="craigbeck" type="application/atom+xml">
@@ -71,118 +69,35 @@ responses due to an invalid &hellip;">
   <div id="main">
     <div id="content">
       <div>
-<article class="hentry" role="article">
+<article role="article">
   
   <header>
-    
-      <h1 class="entry-title">Hapi.js &amp; Invalid Cookies</h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2015-10-17T12:36:04-07:00" pubdate data-updated="true">Oct 17<sup>th</sup>, 2015</time>
-        
-      </p>
+    <h1 class="entry-title">Category: Cors</h1>
     
   </header>
+  
+  <div id="blog-archives" class="category">
 
 
-<div class="entry-content"><p>I love using <a href="http://hapijs.com">Hapi.js</a>, but every time I start a new
-project with it I have this problem where all my requests get 400
-responses due to an invalid cookie value.</p>
 
-<p>My new shiny hapi app doesn&rsquo;t care about cookies. I don&rsquo;t want it to care
-about cookies. But it still does. By default, hapi tries to read all the
-cookies that were sent with the request, <em>including signed cookies set
-by express</em>. Of course, as I&rsquo;ve a habit of developing on localhost, and
-because we have multiple apps on the same domain (java, express, as well
-as hapi) where <em>some</em> of those apps care about these cookies, these
-cookies are going to get sent along with the request to an app that
-doesnt care about them. Hapi does it&rsquo;s job to try and verify the signed
-express cookie and fails (it doesn&rsquo;t have any way to actually verify,
-i.e. no keys/secrets used in the signing), retuning the 400.</p>
+  
+  <h2>2015</h2>
 
-<p>So every new hapi service I start with now I ignore cookie errors:</p>
+<article>
+  
+<h1><a href="/blog/2015/10/27/safari-plus-hapi-dot-js-plus-cors-equals-404/">Safari + Hapi.js + CORS = 404</a></h1>
+<time datetime="2015-10-27T18:34:37-07:00" pubdate><span class='month'>Oct</span> <span class='day'>27</span> <span class='year'>2015</span></time>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="nx">server</span><span class="p">.</span><span class="nx">connection</span><span class="p">({</span>
-</span><span class='line'>  <span class="nx">port</span><span class="o">:</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">PORT</span> <span class="o">||</span> <span class="mi">8000</span><span class="p">,</span>
-</span><span class='line'>  <span class="nx">state</span><span class="o">:</span> <span class="p">{</span>
-</span><span class='line'>    <span class="nx">ignoreErrors</span><span class="o">:</span> <span class="kc">true</span>
-</span><span class='line'>  <span class="p">}</span>
-</span><span class='line'><span class="p">});</span>
-</span></code></pre></td></tr></table></div></figure>
+<footer>
+  <span class="categories">posted in <a class='category' href='/blog/categories/cors/'>cors</a>, <a class='category' href='/blog/categories/hapijs/'>hapijs</a>, <a class='category' href='/blog/categories/safari/'>safari</a></span>
+</footer>
 
 
+</article>
 
 </div>
 
-
-  <footer>
-    <p class="meta">
-      
   
-
-<span class="byline author vcard">Posted by <span class="fn">Craig Beck</span></span>
-
-      
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2015-10-17T12:36:04-07:00" pubdate data-updated="true">Oct 17<sup>th</sup>, 2015</time>
-      
-
-<span class="categories">
-  
-    <a class='category' href='/blog/categories/hapijs/'>hapijs</a>
-  
-</span>
-
-
-    </p>
-    
-      <div class="sharing">
-  
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://craigbeck.io/blog/2015/10/17/hapi-dot-js-and-invalid-cookies/" data-via="" data-counturl="http://craigbeck.io/blog/2015/10/17/hapi-dot-js-and-invalid-cookies/" >Tweet</a>
-  
-  
-  
-</div>
-
-    
-    <p class="meta">
-      
-        <a class="basic-alignment left" href="/blog/2015/05/27/survive-dot-js/" title="Previous Post: Survive.js">&laquo; Survive.js</a>
-      
-      
-        <a class="basic-alignment right" href="/blog/2015/10/19/react-and-redux-tutorial-including-testing/" title="Next Post: React &amp; Redux Tutorial (including testing!)">React &amp; Redux Tutorial (including testing!) &raquo;</a>
-      
-    </p>
-  </footer>
 </article>
 
 </div>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Hapijs | craigbeck]]></title>
-  <link href="http://craigbeck.io/blog/categories/hapijs/atom.xml" rel="self"/>
+  <title><![CDATA[Category: Cors | craigbeck]]></title>
+  <link href="http://craigbeck.io/blog/categories/cors/atom.xml" rel="self"/>
   <link href="http://craigbeck.io/"/>
   <updated>2015-10-28T10:44:54-07:00</updated>
   <id>http://craigbeck.io/</id>
@@ -45,38 +45,6 @@
 <li><a href="https://github.com/hapijs/hapi/issues/2853">&ldquo;Request header field Content-Type is not allowed by Access-Control-Allow-Headers in preflight response.&rdquo;</a></li>
 </ul>
 
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Hapi.js &amp; Invalid Cookies]]></title>
-    <link href="http://craigbeck.io/blog/2015/10/17/hapi-dot-js-and-invalid-cookies/"/>
-    <updated>2015-10-17T12:36:04-07:00</updated>
-    <id>http://craigbeck.io/blog/2015/10/17/hapi-dot-js-and-invalid-cookies</id>
-    <content type="html"><![CDATA[<p>I love using <a href="http://hapijs.com">Hapi.js</a>, but every time I start a new
-project with it I have this problem where all my requests get 400
-responses due to an invalid cookie value.</p>
-
-<p>My new shiny hapi app doesn&rsquo;t care about cookies. I don&rsquo;t want it to care
-about cookies. But it still does. By default, hapi tries to read all the
-cookies that were sent with the request, <em>including signed cookies set
-by express</em>. Of course, as I&rsquo;ve a habit of developing on localhost, and
-because we have multiple apps on the same domain (java, express, as well
-as hapi) where <em>some</em> of those apps care about these cookies, these
-cookies are going to get sent along with the request to an app that
-doesnt care about them. Hapi does it&rsquo;s job to try and verify the signed
-express cookie and fails (it doesn&rsquo;t have any way to actually verify,
-i.e. no keys/secrets used in the signing), retuning the 400.</p>
-
-<p>So every new hapi service I start with now I ignore cookie errors:</p>
-
-<pre><code class="js">server.connection({
-  port: process.env.PORT || 8000,
-  state: {
-    ignoreErrors: true
-  }
-});
-</code></pre>
 ]]></content>
   </entry>
   
