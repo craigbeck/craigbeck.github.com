@@ -9,7 +9,7 @@
   <meta name="author" content="Craig Beck">
 
   
-  <meta name="description" content="So with recent software updated on OS X (including newest Safari 9.0.1) and also updating a project to latest version of hapi.js(v11) CORS requests &hellip;">
+  <meta name="description" content="Dokku is a fantastic little PAAS app written in bash that can take a git push, build, and host your apps. It can use Heroku Buildpacks or Docker to &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -70,6 +70,70 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2016/01/13/dokku-plus-dockerfile-deployments/">Dokku + Dockerfile Deployments</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2016-01-13T13:58:10-08:00" pubdate data-updated="true">Jan 13<sup>th</sup>, 2016</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="https://github.com/dokku/dokku">Dokku</a> is a fantastic little PAAS app written in bash that can take a <code>git push</code>, build, and host your apps. It can use Heroku Buildpacks or <a href="http://docker.com">Docker</a> to build your app (and uses Docker to host your running app) and can hadle running multiple Docker containers on a single host and sets up Nginx to proxy and route requests to the correct application.</p>
+
+<p>I have deployed many apps onto our Dokku hosts, mostly Node.js apps using <a href="http://hapijs.com">Hapi.js</a>, <a href="http://expressjs.com">Express</a>, as well as Java services. Recently I built a statically-rendered <a href="https://facebook.github.io/react/">React</a> application (a client-side only app without a server process doing the rendering etc; see <a href="https://blog.andyet.com/2015/05/18/lazymorphic-apps-bringing-back-static-web/">this</a> post for explaination) where I just wanted Nginx to handle serving the app code and assets. To do so I created a new base Docker image for serving the app just ran Nginx and ponted to my app code.</p>
+
+<p>One problem with this static-rendering strategy is the issue of configuration. Depending on the environment we were deploying the app too meant we needed slightly different setups. For the test environment, we want to point to test envirnmant APIs, use production builds, while production would need to use the produciton APIs, and also would be proxied to from the getway nginx servers with a path prefix i.e. under test the app would be at <a href="http://myapp.test.dev">http://myapp.test.dev</a> while the production app would be at <a href="http://foo.com/myapp">http://foo.com/myapp</a> &ndash; there is an extra layer of nginx proxying involved in the production setup, but it also requires the production build to be aware of that extra path segment when returning URLs for assets (javascript, PNGs etc).</p>
+
+<p>Where we have server process handling requests we have full control over these and use request headers to inject this configuration per request, however a static app can&rsquo;t do this in the same way so we&rsquo;re left with producing environment specific builds. Dokku inherently does this as every deployment (e.g. to prod host or test host) so we just need to be able to pass this configuration at build time. According to the Dokku docs &ldquo;The variables are available both at run time and during the application build/compilation step&rdquo; however this is <em>only</em> true for Heroku buildpack deployments, <em>not</em> Docker deployments.</p>
+
+<p>To get the same thing with Docker builds we have to use the dokku <code>docker-options</code> command which allows us to set options for build, deploy, or run phases of the process. Under the covers the Dokku build invokes <code>docker build</code> which does not take the same <code>-e</code> parameter that <code>docker run</code> accepts for setting environment variables, but does have the <code>--build-args</code> parameter. One caveat of this technique is this requires the Dockerfile your app uses to be modified to accept build arguments using the <code>ARG</code> command. If you don&rsquo;t specify the arg being passed with <code>ARG</code> the build will fail with the error &ldquo;One or more build-args were not consumed&rdquo;.</p>
+
+<p>So to set a build argument of <code>PATH_PREFIX</code> in our example above:</p>
+
+<ol>
+<li><code>dokku build-options:add myapp build '--build-arg "PATH_PREFIX=/myapp"'</code></li>
+<li>modify your dockerfile</li>
+</ol>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>FROM baseimage
+</span><span class='line'>
+</span><span class='line'>ARG PATH_PREFIX                            # declare PATH_PREFIX as build arg
+</span><span class='line'>RUN PATH_PREFIX=${PATH_PREFIX} ./dobuild   # use PATH_PREFIX (in this case as an env var consumed by build script)</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Then commit changes and <code>git push</code> your app</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -296,46 +360,6 @@ documentation is lacking) so I wish I had this months ago!</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2015/05/20/using-hapi-dot-js-with-socket-dot-io/">Socket.io Links</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2015-05-20T16:19:48-07:00" pubdate data-updated="true">May 20<sup>th</sup>, 2015</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="http://matt-harrison.com/using-hapi-js-with-socket-io/">Using hapi.js with socket.io</a><br/>
-Matt Harrison (author of the upcoming book &ldquo;Hapi.js in Action&rdquo;) has a good post on using <a href="http://hapijs.com">hapi.js</a> with <a href="http://socket.io">socket.io</a>. It&rsquo;s really simple to set up and he shows a couple of more interesting examples when using hapi when listening on multiple ports.</p>
-
-<p><a href="http://socketcluster.io">SocketCluster</a><br/>
-SocketCluster is an open-source multi-process clustered framework built to scale across multiple cores and multiple instances. It looks very interesting for taking a lot of the concerns for scaling a socket service and providing a framework for plugging in your own code. I haven&rsquo;t used this yet but look forward using it.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/posts/2">&larr; Older</a>
@@ -351,6 +375,10 @@ SocketCluster is an open-source multi-process clustered framework built to scale
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2016/01/13/dokku-plus-dockerfile-deployments/">Dokku + Dockerfile Deployments</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2015/10/27/safari-plus-hapi-dot-js-plus-cors-equals-404/">Safari + Hapi.js + CORS = 404</a>
       </li>
     
@@ -364,10 +392,6 @@ SocketCluster is an open-source multi-process clustered framework built to scale
     
       <li class="post">
         <a href="/blog/2015/05/27/survive-dot-js/">Survive.js</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/05/20/using-hapi-dot-js-with-socket-dot-io/">Socket.io Links</a>
       </li>
     
   </ul>
@@ -412,7 +436,7 @@ SocketCluster is an open-source multi-process clustered framework built to scale
     </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2015 - Craig Beck -
+  Copyright &copy; 2016 - Craig Beck -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 

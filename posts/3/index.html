@@ -9,7 +9,7 @@
   <meta name="author" content="Craig Beck">
 
   
-  <meta name="description" content="I just published my first public project &ndash; generator-pymod. It is a super-simple Yeoman generator that creates a couple of files and a &hellip;">
+  <meta name="description" content="So I have a fairly simple AngularJS project using the new Angular UI Router and the project is scaffolded with the Yeoman angular generator. All is &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -70,6 +70,226 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/12/11/ui-dot-router-gotcha/">ui.router and &#8216;aProvider&#8217; Problems</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-12-11T10:37:00-08:00" pubdate data-updated="true">Dec 11<sup>th</sup>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>So I have a fairly simple <a href="http://angularjs.org">AngularJS</a> project using the new <a href="https://github.com/angular-ui/ui-router">Angular UI Router</a> and the project is scaffolded with the Yeoman angular generator. All is well when running locally in developer mode, but theres trouble once I run <code>grunt</code> and run with the grunt built/minified/uglified code &ndash; the browser would just hang (Safari) or outright crash (Chrome). Hmmm, thats definitely not right.</p>
+
+<p>My scripts are included in my <code>index.html</code> file like so:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="c">&lt;!-- build:js({.tmp,app}) scripts/scripts.js --&gt;</span>
+</span><span class='line'><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;scripts/app.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+</span><span class='line'><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;scripts/controllers/main.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+</span><span class='line'><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;scripts/controllers/realm.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+</span><span class='line'><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;scripts/services/realms.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+</span><span class='line'><span class="c">&lt;!-- endbuild --&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The purpose of the comment lines are to delineate a block of the html that should be processed together &ndash; in this case the individual files will be concatenated, minified, and then the <code>index.html</code> will be rewritten to include the processed file <code>scripts.js</code></p>
+
+<p>After some non-productive mucking about with ordering and including/excluding files for processing, I cracked open the processed file. It&rsquo;s still fairly readable even with the minification that has taken place.</p>
+
+<h2>NgMin is cool</h2>
+
+<p>One thing the angular generator set up is the use of <a href="https://github.com/btford/ngmin">ngMin</a> so you can write your Javascript without having to worry about details of how it will be minified later so that this:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="s2">&quot;indexApp&quot;</span><span class="p">,[</span>
+</span><span class='line'>    <span class="s2">&quot;chieffancypants.loadingBar&quot;</span><span class="p">,</span><span class="s2">&quot;ui.bootstrap&quot;</span><span class="p">,</span><span class="s2">&quot;ui.router&quot;</span>
+</span><span class='line'>  <span class="p">])</span>
+</span><span class='line'>  <span class="p">.</span><span class="nx">config</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">$urlRouterProvider</span><span class="p">,</span> <span class="nx">$stateProvider</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>    <span class="c1">// snip...</span>
+</span><span class='line'>  <span class="p">});</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>is turned into this after grunt is done with it:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="s2">&quot;indexApp&quot;</span><span class="p">,[</span>
+</span><span class='line'>    <span class="s2">&quot;chieffancypants.loadingBar&quot;</span><span class="p">,</span><span class="s2">&quot;ui.bootstrap&quot;</span><span class="p">,</span><span class="s2">&quot;ui.router&quot;</span>
+</span><span class='line'>  <span class="p">])</span>
+</span><span class='line'>  <span class="p">.</span><span class="nx">config</span><span class="p">([</span><span class="s2">&quot;$urlRouterProvider&quot;</span><span class="p">,</span><span class="s2">&quot;$stateProvider&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>    <span class="c1">// snip...</span>
+</span><span class='line'>  <span class="p">}]);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Notice the arguments to the anonymous function passed to the config method in the before example. The whole argument has been rewritten as an array with the names of the arguments as strings followed by the function where the arguments have been replaced with the more succinct names &ldquo;a&rdquo; and &ldquo;b&rdquo;.</p>
+
+<p>This is cool. NgMin is aware of how Angular does it&rsquo;s dependency injection and rewrites it using the more verbose syntax Angular supports so we can still use our other tools for processing scripts.</p>
+
+<h2>But not all is well.</h2>
+
+<p>Here is one of my states that is setup in the anonymous funciton passed to the module&rsquo;s config method:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="nx">$stateProvider</span>
+</span><span class='line'>  <span class="p">.</span><span class="nx">state</span><span class="p">(</span><span class="s1">&#39;main&#39;</span><span class="p">,</span> <span class="p">{</span>
+</span><span class='line'>    <span class="nx">url</span><span class="o">:</span> <span class="s1">&#39;/&#39;</span><span class="p">,</span>
+</span><span class='line'>    <span class="nx">templateUrl</span><span class="o">:</span> <span class="s1">&#39;views/main.html&#39;</span><span class="p">,</span>
+</span><span class='line'>    <span class="nx">controller</span><span class="o">:</span> <span class="s1">&#39;MainCtrl&#39;</span><span class="p">,</span>
+</span><span class='line'>    <span class="nx">resolve</span><span class="o">:</span> <span class="p">{</span>
+</span><span class='line'>      <span class="nx">allTheRealms</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">MyAppService</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;MainCtrl resolve&#39;</span><span class="p">,</span> <span class="nx">arguments</span><span class="p">);</span>
+</span><span class='line'>        <span class="k">return</span> <span class="nx">MyAppService</span><span class="p">.</span><span class="nx">init</span><span class="p">();</span>
+</span><span class='line'>      <span class="p">}</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>  <span class="p">})</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
+
+<p>I&rsquo;m using a service to make https requests against a service and this needs to be done on initialization so I&rsquo;m using the <code>$stateProvider</code> resolve property to initiate the asynchronous call to the server and once that succeeds its passed to my controller.</p>
+
+<p>This normally works great, but in this case the resolve function had its own dependency on a service. After Grunt had done its thing the code above looked like this:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="nx">b</span><span class="p">.</span><span class="nx">state</span><span class="p">(</span><span class="s1">&#39;main&#39;</span><span class="p">,</span> <span class="p">{</span>
+</span><span class='line'>  <span class="nx">url</span><span class="o">:</span> <span class="s1">&#39;/&#39;</span><span class="p">,</span>
+</span><span class='line'>  <span class="nx">templateUrl</span><span class="o">:</span> <span class="s1">&#39;views/main.html&#39;</span><span class="p">,</span>
+</span><span class='line'>  <span class="nx">controller</span><span class="o">:</span> <span class="s1">&#39;MainCtrl&#39;</span><span class="p">,</span>
+</span><span class='line'>  <span class="nx">resolve</span><span class="o">:</span> <span class="p">{</span>
+</span><span class='line'>    <span class="nx">allTheRealms</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">a</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>      <span class="k">return</span> <span class="nx">a</span><span class="p">.</span><span class="nx">init</span><span class="p">();</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'><span class="p">})</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Notice the function argument is now just called <code>a</code>, and the <code>$stateProvider</code> is called <code>b</code>. This is not helpful as Angular&rsquo;s dependency-injection <em>magic</em> doesn&rsquo;t know what the function needs (i.e. I have no &ldquo;a&rdquo; service to be injected). Usually this files with an error about no &ldquo;aProvider&rdquo; found, but in this case <em>the browser was hanging and or crashing!</em></p>
+
+<h2>What is <code>a</code>?</h2>
+
+<p>Step back to the earlier example:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="s2">&quot;indexApp&quot;</span><span class="p">,[</span>
+</span><span class='line'>    <span class="s2">&quot;chieffancypants.loadingBar&quot;</span><span class="p">,</span><span class="s2">&quot;ui.bootstrap&quot;</span><span class="p">,</span><span class="s2">&quot;ui.router&quot;</span>
+</span><span class='line'>  <span class="p">])</span>
+</span><span class='line'>  <span class="p">.</span><span class="nx">config</span><span class="p">([</span><span class="s2">&quot;$urlRouterProvider&quot;</span><span class="p">,</span><span class="s2">&quot;$stateProvider&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>    <span class="c1">// snip...</span>
+</span><span class='line'>  <span class="p">}]);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><code>a</code> is actually the <code>$urlRouterProvider</code> and we are calling <code>init()</code> on it. Not what we wanted at all. I haven&rsquo;t dug further but my guess is there is an <code>init</code> method on that and it&rsquo;s resulting in something nasty and probably recursive causing the Bad Things&trade;.</p>
+
+<p>Well once I saw that it was a quick Google of &ldquo;ui.router ngmin resolve&rdquo; and found this issue: <a href="https://github.com/btford/ngmin/issues/54">Support for ui-router resolve, onEnter and onExit</a></p>
+
+<p>So apparently ngMin for all its goodness misses on these properties in the state setup. The simple solution is go back to using the alternate Angular syntax for specifying the dependencies:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class='js'><span class='line'><span class="nx">$stateProvider</span>
+</span><span class='line'>  <span class="p">.</span><span class="nx">state</span><span class="p">(</span><span class="s1">&#39;main&#39;</span><span class="p">,</span> <span class="p">{</span>
+</span><span class='line'>    <span class="nx">url</span><span class="o">:</span> <span class="s1">&#39;/&#39;</span><span class="p">,</span>
+</span><span class='line'>    <span class="nx">templateUrl</span><span class="o">:</span> <span class="s1">&#39;views/main.html&#39;</span><span class="p">,</span>
+</span><span class='line'>    <span class="nx">controller</span><span class="o">:</span> <span class="s1">&#39;MainCtrl&#39;</span><span class="p">,</span>
+</span><span class='line'>    <span class="nx">resolve</span><span class="o">:</span> <span class="p">{</span>
+</span><span class='line'>      <span class="nx">allTheRealms</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;MyAppService&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">MyAppService</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;MainCtrl resolve&#39;</span><span class="p">,</span> <span class="nx">arguments</span><span class="p">);</span>
+</span><span class='line'>        <span class="k">return</span> <span class="nx">MyAppService</span><span class="p">.</span><span class="nx">init</span><span class="p">();</span>
+</span><span class='line'>      <span class="p">}]</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>  <span class="p">})</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Once I had that sorted my app loaded fine!</p>
+
+<ul>
+<li><a href="http://docs.angularjs.org/guide/di">Angular Dependency Injection Guide</a></li>
+<li><a href="http://egghead.io/lessons/angularjs-resolve">Using Resolve property with route provider</a></li>
+<li><a href="http://egghead.io/lessons/angularjs-resolve-conventions">More about using resolve</a></li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -175,6 +395,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2016/01/13/dokku-plus-dockerfile-deployments/">Dokku + Dockerfile Deployments</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2015/10/27/safari-plus-hapi-dot-js-plus-cors-equals-404/">Safari + Hapi.js + CORS = 404</a>
       </li>
     
@@ -188,10 +412,6 @@
     
       <li class="post">
         <a href="/blog/2015/05/27/survive-dot-js/">Survive.js</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/05/20/using-hapi-dot-js-with-socket-dot-io/">Socket.io Links</a>
       </li>
     
   </ul>
@@ -236,7 +456,7 @@
     </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2015 - Craig Beck -
+  Copyright &copy; 2016 - Craig Beck -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 
