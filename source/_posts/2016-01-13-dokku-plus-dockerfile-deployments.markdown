@@ -22,7 +22,6 @@ To get the same thing with Docker builds we have to use the dokku `docker-option
 So to set a build argument of `PATH_PREFIX` in our example above:
 
 1. `dokku build-options:add myapp build '--build-arg "PATH_PREFIX=/myapp"'`
-
 2. modify your dockerfile
 
 ```
@@ -32,5 +31,5 @@ ARG PATH_PREFIX                            # declare PATH_PREFIX as build arg
 RUN PATH_PREFIX=${PATH_PREFIX} ./dobuild   # use PATH_PREFIX (in this case as an env var consumed by build script)
 ```
 
-3. commit changes and `git push` your app
+Then commit changes and `git push` your app
 
