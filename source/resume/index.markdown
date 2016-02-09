@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "resume"
-date: 2015-05-20
+date: 2016-02-02
 comments: false
 sharing: true
 footer: true
@@ -21,12 +21,9 @@ footer: true
 
 <hr/>
 
-The languages I am currently most fluent in are **Javascript** and **Python**,
-although I have done work with Java and C#, I am most passionate to
-work with **node.js**, **Ruby**, or **Elixir** and **Erlang** to create [native web apps](https://blog.andyet.com/2015/01/22/native-web-apps) and supporting APIs.
+The language I am currently most fluent in is **Javascript** for both client and server development, although I have done work with Java, C#, and Python, I am most passionate to work with **node.js**, or **Elixir** and **Erlang** to create [native web apps](https://blog.andyet.com/2015/01/22/native-web-apps) and supporting APIs.
 
-I am most comfortable with agile development processes and enjoy
-pair-programming and practicing <abbr title="Test Diven Development">[TDD](http://en.wikipedia.org/wiki/Test-driven_development)</abbr> and <abbr title="Behaviour Diven Development">[BDD](http://en.wikipedia.org/wiki/Behavior-driven_development)</abbr>
+I am most comfortable with agile development processes and enjoy pair-programming and practicing <abbr title="Test Diven Development">[TDD](http://en.wikipedia.org/wiki/Test-driven_development)</abbr> and <abbr title="Behaviour Diven Development">[BDD](http://en.wikipedia.org/wiki/Behavior-driven_development)</abbr>
 
 
 ## Technical Skills
