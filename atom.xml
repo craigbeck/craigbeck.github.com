@@ -4,7 +4,7 @@
   <title><![CDATA[craigbeck]]></title>
   <link href="http://craigbeck.io/atom.xml" rel="self"/>
   <link href="http://craigbeck.io/"/>
-  <updated>2016-02-02T09:48:43-08:00</updated>
+  <updated>2016-02-09T10:44:14-08:00</updated>
   <id>http://craigbeck.io/</id>
   <author>
     <name><![CDATA[Craig Beck]]></name>
@@ -12,6 +12,19 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Dr. Frisby's Mostly Adequate Guide to Functional Programming]]></title>
+    <link href="http://craigbeck.io/blog/2016/02/09/dr-frisbys-mostly-adequate-guide-to-functional-programming/"/>
+    <updated>2016-02-09T10:38:16-08:00</updated>
+    <id>http://craigbeck.io/blog/2016/02/09/dr-frisbys-mostly-adequate-guide-to-functional-programming</id>
+    <content type="html"><![CDATA[<p><a href="https://drboolean.gitbooks.io/mostly-adequate-guide/">A &ldquo;Mostly Adequate&rdquo; guide to funcitonal programming</a>. Going onto the reading list.</p>
+
+<p>Written using <a href="https://www.gitbook.com">Gitbook</a> which is a really cool tool
+for writing online books. <em>I wish they had a way to star or add books to
+a library</em> as it is&hellip; I&rsquo;ll just have to drop this link here.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Dokku + Dockerfile Deployments]]></title>
